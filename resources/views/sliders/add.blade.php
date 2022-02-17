@@ -291,14 +291,14 @@
             };</script>
         <!--end::Global Config-->
         <!--begin::Global Theme Bundle(used by all pages)-->
-        <script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
-        <script src="{{asset('assets/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
-        <script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
+        <script src="{{asset('assets/admin/plugins/global/plugins.bundle.js')}}"></script>
+        <script src="{{asset('assets/admin/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
+        <script src="{{asset('assets/admin/js/scripts.bundle.js')}}"></script>
         <!--end::Global Theme Bundle-->
         <!--begin::Page Scripts(used by this page)-->
-        <script src="{{asset('assets/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
-        <script src="{{asset('assets/js/pages/crud/forms/widgets/bootstrap-timepicker.js')}}"></script>
-        <script src="{{asset('assets/js/pages/crud/file-upload/image-input.js')}}"></script>
+        <script src="{{asset('assets/admin/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
+        <script src="{{asset('assets/admin/js/pages/crud/forms/widgets/bootstrap-timepicker.js')}}"></script>
+        <script src="{{asset('assets/admin/js/pages/crud/file-upload/image-input.js')}}"></script>
 
         <!--end::Page Scripts-->
 

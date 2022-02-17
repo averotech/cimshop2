@@ -522,7 +522,7 @@
     </div>
     <!--end::Main-->
 
-
+</div>
     <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
     <!--begin::Global Config(global config for global JS scripts)-->
     <script>var KTAppSettings = {"breakpoints": {"sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400},
@@ -578,14 +578,14 @@
         };</script>
     <!--end::Global Config-->
     <!--begin::Global Theme Bundle(used by all pages)-->
-    <script src="{{asset('assets/plugins/global/plugins.bundle.js')}}"></script>
-    <script src="{{asset('assets/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
-    <script src="{{asset('assets/js/scripts.bundle.js')}}"></script>
+    <script src="{{asset('assets/admin/plugins/global/plugins.bundle.js')}}"></script>
+    <script src="{{asset('assets/admin/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
+    <script src="{{asset('assets/admin/js/scripts.bundle.js')}}"></script>
     <!--end::Global Theme Bundle-->
     <!--begin::Page Scripts(used by this page)-->
-    <script src="{{asset('assets/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
-    <script src="{{asset('assets/js/pages/crud/forms/widgets/bootstrap-timepicker.js')}}"></script>
-    <script src="{{asset('assets/js/pages/crud/file-upload/image-input.js')}}"></script>
+    <script src="{{asset('assets/admin/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
+    <script src="{{asset('assets/admin/js/pages/crud/forms/widgets/bootstrap-timepicker.js')}}"></script>
+    <script src="{{asset('assets/admin/js/pages/crud/file-upload/image-input.js')}}"></script>
 
     <!--end::Page Scripts-->
 
@@ -599,11 +599,7 @@
             $("body").on("click", ".removeSliderImage", function () {
                 $(this).parent().parent(".phpicoder").remove();
             });
-        });
-    </script>
 
-    <script type="text/javascript">
-        $(document).ready(function () {
             $(".addMoreColor").click(function () {
                 var cloneHTML = $(".cloneColor").html();
                 $(".colorList").after(cloneHTML);
@@ -611,6 +607,7 @@
             $("body").on("click", ".removeSliderColor", function () {
                 $(this).parent().parent(".phpicoderColor").remove();
             });
+
         });
     </script>
 
