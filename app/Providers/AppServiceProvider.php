@@ -26,6 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        View::share('locales',config('app.locales'));
         if (Schema::hasTable('abouts')) {
             $settings = About::first();
             View::share('settings', $settings);

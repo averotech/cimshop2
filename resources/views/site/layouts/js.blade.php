@@ -14,5 +14,10 @@
 <script src="{{ asset('assets/js/sliderRange.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.popup.lightbox.js') }}"></script>
 @stack('_js')
+<script>
+    $('.lang-select').change(function() {
+       window.location.href = '{{url('/').'/'.app()->getLocale().'/change-language'}}'+'/'+$( this ).val()
+    });
+</script>
 <script src="{{ asset('js/app.js') }}"></script>
 @stack('js')
