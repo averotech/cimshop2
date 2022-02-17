@@ -1,7 +1,7 @@
 @extends('site.layouts.app')
 @push('page-title',trans('site.shop'))
 @section('content')
-    <products-search :text="`{{ request('text-search') }}`" inline-template>
+    <products-search :text="`{{ request('text-search') }}`" inline-template >
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -30,6 +30,15 @@
     </products-search>
 @endsection
 @push('css')
+    <style>
+        .el-slider__bar {
+            background-color: #8cc63f!important;
+        }
+        .el-slider__button{
+            border: 2px solid #8cc63f!important;
+            background-color: #8cc63f!important;
+        }
+    </style>
 @endpush
 @push('_js')
 @endpush

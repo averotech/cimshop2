@@ -7,7 +7,7 @@
     @include('site.layouts.header')
 
 
-<div id="app">
+<div id="app" v-cloak>
     @yield('content')
 
     <div class="overlay"></div>

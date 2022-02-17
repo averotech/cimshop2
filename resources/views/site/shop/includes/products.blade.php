@@ -7,10 +7,10 @@
                         <img :src="product.main_image.img_url" alt="">
                     </div>
                     <div class="prName">@{{ product.show_name }}</div>
-                    <div v-if="product.size" class="prDet d-flex justify-content-between">
-                        <span class="detAttr"> Size</span>
-                        <span class="detValue"> @{{ product.size }}</span>
-                    </div>
+{{--                    <div v-if="product.size" class="prDet d-flex justify-content-between">--}}
+{{--                        <span class="detAttr"> Size</span>--}}
+{{--                        <span class="detValue"> @{{ product.size }}</span>--}}
+{{--                    </div>--}}
                     <div class="prDet d-flex justify-content-between">
                         <span class="detAttr"> Price</span>
                         <span class="detValue Price">

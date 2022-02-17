@@ -1,7 +1,7 @@
 @extends('site.layouts.app')
 @push('page-title',$product->show_name)
 @section('content')
-    <product-detilas :product="{{ json_encode($product) }}" inline-template v-cloak>
+    <product-detilas :product="{{ json_encode($product) }}" inline-template>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -47,6 +47,7 @@
                             <div class="Det">
                                 <h4> Size </h4>
                                 <div class="btn-group btn-group-sm sizeBox" role="group" aria-label="Basic radio toggle button group">
+
                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
                                     <label class="btn btn-outline-primary" for="btnradio1">XL</label>
                                     <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">

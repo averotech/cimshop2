@@ -80,7 +80,7 @@
                         <div class="row add-note" v-if="cart.length>0">
                             <div class="col-12">
                                 <h1> Add Note: </h1>
-                                <textarea class="form-control"></textarea>
+                                <textarea v-model="note" class="form-control"></textarea>
                             </div>
                         </div>
                         <div class="row add-note">
@@ -104,7 +104,7 @@
                 </div>
             </div>
 
-            <div class="modal fade" id="CheckOut" tabindex="-1" aria-labelledby="CheckOutLabel" aria-hidden="true">
+            <div class="modal fade" id="paymentModal" v-if="cart.length>0"tabindex="-1" aria-labelledby="CheckOutLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -114,24 +114,24 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label ">Name</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+                                <input type="text" v-model="name" required class="form-control" id="exampleFormControlInput1" placeholder="Name">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                <input type="email" v-model="email" required class="form-control" id="exampleFormControlInput1"
                                        placeholder="name@example.com">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Phone</label>
-                                <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="Phone">
+                                <input type="tel" v-model="phone" required class="form-control" id="exampleFormControlInput1" placeholder="Phone">
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlInput1" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Your Adress">
+                                <input type="text" v-model="address" required class="form-control" id="exampleFormControlInput1" placeholder="Your Adress">
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-defualt">Check Out</button>
+                            <button type="button" @click="submitCheckOut" :disabled="form.disabledButton" class="btn btn-defualt">Check Out</button>
                         </div>
                     </div>
                 </div>
