@@ -57,4 +57,9 @@ return [
     'buy_now' => 'Buy now',
     'title_search' => 'Please enter the product name',
     'related_products' => 'Related Products',
+    'SKU' => 'SKU',
+    'product_info' => 'Product Info',
+    'shipping_info' => 'Shipping Info',
+    'refund_return_policy' => 'Refund & Return Policy',
+    'releated_product' => 'Releated Product',
 ];

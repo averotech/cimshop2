@@ -6,10 +6,10 @@
             <div class="row">
                 <div class="col-12">
                     <div class="headTitle d-flex justify-content-between flex-wrap" style="min-height:55px ;height:auto !important">
-                        <h1 class=" tDefualt Fn-Bd">My Shop</h1>
+                        <h1 class=" tDefualt Fn-Bd">{{ trans('site.my_shop') }}</h1>
                         <div class="col-lg-3 col-md-5 col-sm-6 col-xs-10">
                             <div class="input-group  ">
-                                <label class="input-group-text  " for="inputGroupSelect01">Sort By:</label>
+                                <label class="input-group-text  " for="inputGroupSelect01">{{ trans('site.store_by') }}:</label>
                                 <select v-model="sort" @change="onSort" class="form-select" id="inputGroupSelect01">
                                     <option value="" disabled selected>{{ trans('site.store_by') }}</option>
                                     <option value="asc_price">{{ trans('site.az_based_on_price') }}</option>

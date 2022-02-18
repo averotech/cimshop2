@@ -7,7 +7,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="headTitle d-flex justify-content-between">
-                    <h1 class=" tDefualt Fn-Bd"> About us </h1>
+                    <h1 class=" tDefualt Fn-Bd"> {{ trans('site.about_us') }} </h1>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
                             <div class="addressIco"><i class="fal fa-map-marker-alt"></i> {{$settings['address']}}</div>
                             <div class="addressIco"><i class="fal fa-envelope"></i>{{$settings['email']}}</div>
                             <div class="addressIco"><i class="fal fa-globe"></i>{{$settings['website']}}</div>
-                            <a class="btn btn-defualt" href="{{ route('site.contact_us.index') }}"> Contact Us</a>
+                            <a class="btn btn-defualt" href="{{ route('site.contact_us.index') }}"> {{ trans('site.contact_us') }}</a>
                         </div>
                         @if(count($images) >=1)
                         <div class=" col-lg-3 col-md-3 col-sm-6 col-xs-6  ">
