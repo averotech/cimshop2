@@ -33,19 +33,19 @@
 
             </div>
             <div class="col-md-2 col-sm-5 col-xs-12">
-                <div class="title">Quick Link</div>
+                <div class="title">{{ trans('site.quick_link') }}</div>
                 <ul class="m-0 p-0 links">
-                    <li><a href="{{ route('site.index') }}">Home</a></li>
-                    <li><a href="{{ route('site.shop.index') }}">Shop</a></li>
-                    <li><a href="{{route('site.cart.index')}}">Cart</a></li>
-                    <li><a href="{{route('site.faq.index')}}">FAQ</a></li>
-                    <li><a href="{{ route('site.about_us.index') }}">Abouts us</a></li>
-                    <li><a href="{{ route('site.contact_us.index') }}">Contact us</a></li>
+                    <li><a href="{{ route('site.index') }}">{{ trans('site.home') }}</a></li>
+                    <li><a href="{{ route('site.shop.index') }}">{{ trans('site.shop') }}</a></li>
+                    <li><a href="{{route('site.cart.index')}}">{{ trans('site.cart') }}</a></li>
+                    <li><a href="{{route('site.faq.index')}}">{{ trans('site.FAQ') }}</a></li>
+                    <li><a href="{{ route('site.about_us.index') }}">{{ trans('site.about_us') }}</a></li>
+                    <li><a href="{{ route('site.contact_us.index') }}">{{ trans('site.contact_us') }}</a></li>
                 </ul>
             </div>
             @isset($settings['video_url'])
                 <div class="col-md-3 col-sm-12 col-xs-12 ">
-                    <div class="title">Video</div>
+                    <div class="title">{{ trans('site.video') }}</div>
                     <div class="bgVid">
                         <video width="100%" height="100%" controls>
                             <source src="{{$settings['video_url'] }}" type="video/mp4">
@@ -55,7 +55,7 @@
             @endisset
             @isset($settings['google_map'])
                 <div class="col-md-4 col-sm-12 col-xs-12 ">
-                    <div class="title">Our Location</div>
+                    <div class="title">{{ trans('site.our_location') }}</div>
                     <div class="mapLocation">
                         <div class="mapouter">
                             <div class="gmap_canvas">
@@ -68,7 +68,7 @@
         </div>
     </div>
     <div class="bottomFooter text-center ">
-        <span> Copyright  © cimshop [ {{date('Y')}} ] </span>
+        <span> {{ trans('site.copyright') }}  © {{ trans('site.cimshop') }} [ {{date('Y')}} ] </span>
     </div>
 </footer>
 

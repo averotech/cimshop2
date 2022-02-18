@@ -62,4 +62,11 @@ return [
     'shipping_info' => 'Shipping Info',
     'refund_return_policy' => 'Refund & Return Policy',
     'releated_product' => 'Releated Product',
+    'advertise_with_us' => 'Advertise With Us',
+    'our_location' => 'Our Location',
+    'video' => 'Video',
+    'quick_link' => 'Quick Link',
+    'cimshop' => 'cimshop',
+    'copyright' => 'Copyright ',
+    'description' => 'Description',
 ];

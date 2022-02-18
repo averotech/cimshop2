@@ -1,7 +1,7 @@
 <div class="container d-section ">
     <div class="row">
         <div class="col-12 p-0 m-0 ">
-            <h1 class=" tDefualt Fn-Bd">Advertise with us</h1>
+            <h1 class=" tDefualt Fn-Bd">{{ trans('site.advertise_with_us') }}</h1>
         </div>
     </div>
     <div class="row">

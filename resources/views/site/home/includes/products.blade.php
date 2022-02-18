@@ -2,7 +2,7 @@
     <div class="container  d-section">
         <div class="row">
             <div class="col-12 p-0 m-0 ">
-                <h1 class=" tDefualt Fn-Bd">Our Product</h1>
+                <h1 class=" tDefualt Fn-Bd">{{ trans('site.our_product') }}</h1>
             </div>
         </div>
         <div class="row p-0 m-0">
@@ -22,7 +22,7 @@
 {{--                            </div>--}}
 {{--                        @endif--}}
                         <div class="prDet d-flex justify-content-between">
-                            <span class="detAttr"> Price</span>
+                            <span class="detAttr"> {{ trans('site.price') }}</span>
                             <span class="detValue Price">
                             @if($product->price_after_discount)
                                 <span class="lastPrice"> ${{$product->price}} </span>
