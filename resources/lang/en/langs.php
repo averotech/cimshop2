@@ -2,6 +2,7 @@
 
 return [
 
+    'sliders' => 'Sliders',
     'sizes' => 'Sizes',
     'status_active' => 'Coupon Status',
     'add_coupon' => 'Add Coupon',

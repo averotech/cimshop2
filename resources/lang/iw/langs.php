@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    'sliders' => 'Sliders',
     'status_active' => 'Coupon Status',
     'add_coupon' => 'Add Coupon',
     'edit_coupon' => 'Edit Coupon',
