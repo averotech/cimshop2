@@ -47,13 +47,14 @@
                             <div class="Det">
                                 <h4> Size </h4>
                                 <div class="btn-group btn-group-sm sizeBox" role="group" aria-label="Basic radio toggle button group">
-
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
-                                    <label class="btn btn-outline-primary" for="btnradio1">XL</label>
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btnradio2">XXL</label>
-                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-                                    <label class="btn btn-outline-primary" for="btnradio3">XXXL</label>
+                                    @foreach($product->sizes as $key=>$size)
+                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio{{$key}}" autocomplete="off" >
+                                    <label class="btn btn-outline-primary" for="btnradio{{$key}}">{{$size->size->name . ' + $'. $size->price}}</label>
+                                    @endforeach
+{{--                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">--}}
+{{--                                    <label class="btn btn-outline-primary" for="btnradio2">XXL</label>--}}
+{{--                                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">--}}
+{{--                                    <label class="btn btn-outline-primary" for="btnradio3">XXXL</label>--}}
                                 </div>
                             </div>
                             <div class="Det Amount">
@@ -140,12 +141,12 @@
                                         <img src="{{ $product->product->mainImage->img_url }}" alt="">
                                     </div>
                                     <div class="prName"><a href="{{ route('site.product.details',['id' => $product->product->id]) }}">{{ $product->product->show_name }}</a></div>
-                                    @if($product->size)
-                                        <div class="prDet d-flex justify-content-between">
-                                            <span class="detAttr">{{ trans('site.size') }}</span>
-                                            <span class="detValue"> {{$product->product->show_size}}</span>
-                                        </div>
-                                    @endif
+{{--                                    @if($product->size)--}}
+{{--                                        <div class="prDet d-flex justify-content-between">--}}
+{{--                                            <span class="detAttr">{{ trans('site.size') }}</span>--}}
+{{--                                            <span class="detValue"> {{$product->product->show_size}}</span>--}}
+{{--                                        </div>--}}
+{{--                                    @endif--}}
                                     <div class="prDet d-flex justify-content-between">
                                         <span class="detAttr">{{ trans('site.price') }}</span>
                                         <span class="detValue Price">

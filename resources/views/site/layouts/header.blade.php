@@ -26,7 +26,10 @@
                         <a class="nav-link {{request()->segment(2) === 'contact-us' ?'active' : ''}}" href="{{ route('site.contact_us.index') }}">{{ trans('site.contact_us') }}</a>
                     </li>
                     <li class="nav-item  d-lg-none d-md-none d-sm-block d-xs-block">
-                        <a href="{{route('site.cart.index')}}" class="CartIco "> <i class="fal fa-shopping-bag"></i><span class="badge badge-pill badge-danger">5</span> </a>
+                        <a href="{{route('site.cart.index')}}" class="CartIco ">
+                            <i class="fal fa-shopping-bag"></i>
+{{--                            <span class="badge badge-pill badge-danger">5</span>--}}
+                        </a>
                     </li>
                     <li class="nav-item  d-lg-none d-md-none d-sm-block d-xs-block">
                         <select class="form-select lang-select" aria-label="Default select example">
@@ -62,7 +65,8 @@
                         @endforeach
                     </select>
                     <a href="{{route('site.cart.index')}}" class="CartIco "> <i class="fal fa-shopping-bag"></i>
-                    <span class="badge badge-pill badge-danger">5</span> </a>
+{{--                    <span class="badge badge-pill badge-danger">5</span>--}}
+                    </a>
 
                         <div class="searchDiv">
                             <input  type="text" id="name" name="text-search"  class="form-control me-2 rounded-pill font" placeholder="Search" aria-label="Recipient's username" aria-describedby="button-addon2">
