@@ -13,6 +13,7 @@ use App\Http\Controllers\Dashboard\MessageController;
 use App\Http\Controllers\Dashboard\OrderController;
 use App\Http\Controllers\Dashboard\ProductController;
 use App\Http\Controllers\Dashboard\ReportController;
+use App\Http\Controllers\Dashboard\SizeController;
 use App\Http\Controllers\Dashboard\SliderController;
 use App\Http\Controllers\Dashboard\SubscriperController;
 use App\Http\Controllers\Site\AboutUSController;
@@ -143,41 +144,47 @@ Route::group(['middleware' => 'auth', 'prefix' => request()->segment(1) . '/' . 
 
     //Show All
     Route::get('products', [ProductController::class, 'index'])->name('product.index');
-
     //Delete Product
     Route::delete('product/{id}', [ProductController::class, 'destroy'])->name('product.delete');
-
     //Create Product
     Route::get('addProduct', [ProductController::class, 'create'])->name('product.create');
-
     //Add Product
     Route::post('addProduct', [ProductController::class, 'store'])->name('product.store');
-
     //Edit Product
     Route::get('editProduct/{id}', [ProductController::class, 'edit'])->name('product.edit');
-
     //Update Product
     Route::post('editProduct/{id}', [ProductController::class, 'update'])->name('product.update');
-
     //Show Details Product
     Route::get('product/details/{id}', [ProductController::class, 'show'])->name('product.show');
-
     //Show All Critical Products
     Route::get('critical/products', [ProductController::class, 'criticalProducts'])->name('critical.index');
-
-
     //Show Other Info Of Product
     Route::get('product/otherInfo/{id}', [ProductController::class, 'showOtherInfo'])->name('product.other_info.info');
-
     //Delete Other Info Product
     Route::delete('product/info/{id}', [ProductController::class, 'destroyOtherInfo'])->name('product.other_info.delete');
-
-
     //Add Other Info Product
     Route::get('product/info/add/{id}', [ProductController::class, 'addOtherInfoView'])->name('other_info.add');
-
     //Add Other Info Product
     Route::post('product/info/add/{id}', [ProductController::class, 'addOtherInfo']);
+    //////////////////////// Category ////////////////////////
+
+
+
+    //////////////////////// Size ////////////////////////
+
+    //Show All
+    Route::get('sizes', [SizeController::class, 'index'])->name('size.index');
+    //Delete Size
+    Route::delete('size/{id}', [SizeController::class, 'destroy'])->name('size.delete');
+    //Create Size
+    Route::get('addSize', [SizeController::class, 'create'])->name('size.create');
+    //Add Size
+    Route::post('addSize', [SizeController::class, 'store'])->name('size.store');
+    //Edit Size
+    Route::get('editSize/{id}', [SizeController::class, 'edit'])->name('size.edit');
+    //Update Size
+    Route::post('editSize/{id}', [SizeController::class, 'update'])->name('size.update');
+
 
 
     //////////////////////// Category ////////////////////////

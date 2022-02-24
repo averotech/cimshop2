@@ -155,7 +155,7 @@
                                                         (ar)
                                                     @endif
                                                     : </label>
-                                                <input id="title" type="text" class="form-control" required
+                                                <input id="title" type="text" class="form-control"
                                                        placeholder=" {{  __('langs.name') }}" name="name"
                                                        value="{{ old('name') }}"/>
 
@@ -174,7 +174,7 @@
                                                         (en)
                                                     @endif
                                                     : </label>
-                                                <input id="title" type="text" class="form-control" required
+                                                <input id="title" type="text" class="form-control"
                                                        placeholder=" {{  __('langs.name') }}" name="name_en"
                                                        value="{{ old('name_en') }}"/>
 
@@ -188,35 +188,31 @@
                                                 <label>
                                                     {{  __('langs.sku') }} :
                                                 </label>
-                                                <input id="title" type="text" class="form-control" required placeholder=" {{  __('langs.sku') }}" name="sku" value="{{ old('sku') }}"/>
+                                                <input id="title" type="text" class="form-control"
+                                                       placeholder=" {{  __('langs.sku') }}" name="sku"
+                                                       value="{{ old('sku') }}"/>
 
                                             </div>
                                         </div>
 
                                         <div class="form-group row">
-                                            <div class="col-lg-6">
-                                                <label>size : </label>
-                                                <select name="size" class="form-control">
-                                                    <option value="">select size</option>
-                                                    @foreach(\App\Models\Product::sizes() as $key=>$value)
-                                                        <option value="{{$key}}">{{$value}}</option>
-                                                    @endforeach
-                                                </select>
-                                            </div>
-
                                             <div class="col-lg-6">
                                                 <label>
-                                                    {{  __('langs.price') }}:
+                                                    {{  __('langs.price') }} :
                                                 </label>
-                                                <input id="title" type="text" class="form-control" required placeholder=" {{  __('langs.price') }}" name="price" value="{{ old('price') }}"/>
+                                                <input id="price" type="text" name="price"
+                                                       class="form-control"
+                                                       placeholder=" {{  __('langs.price') }}"
+                                                       value="{{ old('price') }}"/>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <div class="col-lg-12">
+                                            <div class="col-lg-6">
                                                 <label>
                                                     {{  __('langs.price_after_discount') }} :
                                                 </label>
-                                                <input id="title" type="text" name="price_after_discount" class="form-control" required placeholder=" {{  __('langs.price_after_discount') }}" value="{{ old('price_after_discount') }}"/>
+                                                <input id="title" type="text" name="price_after_discount"
+                                                       class="form-control"
+                                                       placeholder=" {{  __('langs.price_after_discount') }}"
+                                                       value="{{ old('price_after_discount') }}"/>
                                             </div>
                                         </div>
 
@@ -225,7 +221,7 @@
                                                 <label>
                                                     {{  __('langs.quantity') }}:
                                                 </label>
-                                                <input id="title" type="text" class="form-control" required
+                                                <input id="title" type="text" class="form-control"
                                                        placeholder=" {{  __('langs.quantity') }}" name="quantity"
                                                        value="{{ old('quantity') }}"/>
 
@@ -236,7 +232,7 @@
                                                 <label>
                                                     {{  __('langs.min_stock') }} :
                                                 </label>
-                                                <input id="title" type="text" class="form-control" required
+                                                <input id="title" type="text" class="form-control"
                                                        placeholder=" {{  __('langs.min_stock') }}" name="min_stock"
                                                        value="{{ old('min_stock') }}"/>
 
@@ -298,32 +294,32 @@
                                         </div>
 
 
-{{--                                        <div class="colorList" style="width:500px">--}}
-{{--                                            <div class="input-group control-group">--}}
-{{--                                                <input type="color" name="colors[]" required class="myfrm form-control"--}}
-{{--                                                       style="width:300px">--}}
-{{--                                                <div class="input-group-btn">--}}
-{{--                                                    <button class="btn btn-success addMoreColor" type="button">--}}
-{{--                                                        <i class="la la-plus"></i>--}}
-{{--                                                    </button>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                        <div class="cloneColor d-none">--}}
-{{--                                            <div class="control-group input-group phpicoderColor"--}}
-{{--                                                 style="margin-top:5px;width:500px">--}}
-{{--                                                <input type="color" name="colors[]" class="myfrm form-control"--}}
-{{--                                                       style="width:300px">--}}
-{{--                                                <div class="input-group-btn">--}}
-{{--                                                    <button class="btn btn-danger removeSliderColor" type="button">--}}
-{{--                                                        <i class="la la-close"></i>--}}
-{{--                                                    </button>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+                                        {{--                                        <div class="colorList" style="width:500px">--}}
+                                        {{--                                            <div class="input-group control-group">--}}
+                                        {{--                                                <input type="color" name="colors[]"  class="myfrm form-control"--}}
+                                        {{--                                                       style="width:300px">--}}
+                                        {{--                                                <div class="input-group-btn">--}}
+                                        {{--                                                    <button class="btn btn-success addMoreColor" type="button">--}}
+                                        {{--                                                        <i class="la la-plus"></i>--}}
+                                        {{--                                                    </button>--}}
+                                        {{--                                                </div>--}}
+                                        {{--                                            </div>--}}
+                                        {{--                                        </div>--}}
+                                        {{--                                        <div class="cloneColor d-none">--}}
+                                        {{--                                            <div class="control-group input-group phpicoderColor"--}}
+                                        {{--                                                 style="margin-top:5px;width:500px">--}}
+                                        {{--                                                <input type="color" name="colors[]" class="myfrm form-control"--}}
+                                        {{--                                                       style="width:300px">--}}
+                                        {{--                                                <div class="input-group-btn">--}}
+                                        {{--                                                    <button class="btn btn-danger removeSliderColor" type="button">--}}
+                                        {{--                                                        <i class="la la-close"></i>--}}
+                                        {{--                                                    </button>--}}
+                                        {{--                                                </div>--}}
+                                        {{--                                            </div>--}}
+                                        {{--                                        </div>--}}
 
-{{--                                        <br/>--}}
-{{--                                        <br/>--}}
+                                        {{--                                        <br/>--}}
+                                        {{--                                        <br/>--}}
 
                                         <div class="form-group row">
                                             <div class="col-lg-6">
@@ -352,7 +348,8 @@
                                                     @endif
                                                     : </label>
 
-                                                <textarea class="form-control" name="description_en" rows="4"></textarea>
+                                                <textarea class="form-control" name="description_en"
+                                                          rows="4"></textarea>
 
                                             </div>
                                         </div>
@@ -384,7 +381,8 @@
                                                     @endif
                                                     : </label>
 
-                                                <textarea class="form-control" name="product_info_en" rows="4"></textarea>
+                                                <textarea class="form-control" name="product_info_en"
+                                                          rows="4"></textarea>
 
                                             </div>
                                         </div>
@@ -417,7 +415,8 @@
                                                     @endif
                                                     : </label>
 
-                                                <textarea class="form-control" name="shipping_info_en" rows="4"></textarea>
+                                                <textarea class="form-control" name="shipping_info_en"
+                                                          rows="4"></textarea>
 
                                             </div>
                                         </div>
@@ -435,7 +434,8 @@
                                                     @endif
                                                     : </label>
 
-                                                <textarea class="form-control" name="refund_and_return_policy" rows="4"></textarea>
+                                                <textarea class="form-control" name="refund_and_return_policy"
+                                                          rows="4"></textarea>
                                             </div>
                                             <div class="col-lg-6">
                                                 <label>
@@ -449,23 +449,75 @@
                                                     @endif
                                                     : </label>
 
-                                                <textarea class="form-control" name="refund_and_return_policy_en" rows="4"></textarea>
+                                                <textarea class="form-control" name="refund_and_return_policy_en"
+                                                          rows="4"></textarea>
                                             </div>
                                         </div>
 
-                                        <label style="font-size:17px">{{  __('langs.images') }} :
-                                            <span style="color:#c12a2a;font-size:12px">{{ __('langs.images_msg') }}</span>
-                                        </label>
+                                        <div class="form-group row sizeList">
+                                            <div class="col-lg-6">
+                                                <label>size : </label>
+                                                <select name="size[]" class="form-control">
+                                                    <option value="">select size</option>
+                                                    @foreach(\App\Models\Product::getSizes() as $key=>$value)
+                                                        <option value="{{$value->id}}">{{$value->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+
+                                            <div class="col-lg-5">
+                                                <label>
+                                                    {{  __('langs.price') }}:
+                                                </label>
+                                                <input  type="text" class="form-control" placeholder=" {{  __('langs.price') }}" name="size_price[]" value="{{ old('price') }}"/>
+                                            </div>
+
+                                            <div class="col-md-1">
+                                                <label> </label>
+                                                <div class="d-flex justify-content-between-center">
+                                                    <div class="input-group-btn">
+                                                        <button class="btn btn-success addMoreSize" type="button">
+                                                            <i class="la la-plus"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="size d-none">
+                                            <div class="form-group row phpsize" style="margin-top:5px">
+                                                <div class="col-lg-6">
+                                                    <label>size : </label>
+                                                    <select name="size[]" class="form-control">
+                                                        <option value="">select size</option>
+                                                        @foreach(\App\Models\Product::getSizes() as $key=>$value)
+                                                            <option value="{{$value->id}}">{{$value->name}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+
+                                                <div class="col-lg-5">
+                                                    <label>{{  __('langs.price') }}:</label>
+                                                    <input id="size_price" type="text" class="form-control"  placeholder=" {{  __('langs.price') }}" name="size_price[]" value="{{ old('price') }}"/>
+                                                </div>
+                                                <div class="col-lg-1">
+                                                    <label></label>
+                                                    <div class="input-group-btn removeSize">
+                                                        <button class="btn btn-danger" type="button"><i class="la la-remove"></i></button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <label style="font-size:17px">{{  __('langs.images') }} :<span style="color:#c12a2a;font-size:12px">{{ __('langs.images_msg') }}</span></label>
 
                                         <div class="sliderList">
                                             <div class="input-group control-group">
-                                                <input type="file" name="imageFile[]" required
-                                                       class="myfrm form-control">
+                                                <input type="file" name="imageFile[]"  class="myfrm form-control">
                                                 <input type="hidden" name="checkSelect[]">
                                                 <div class="input-group-btn">
-                                                    <button class="btn btn-success addMoreSlider" type="button">
-                                                        <i class="la la-plus"></i>
-                                                    </button>
+                                                    <button class="btn btn-success addMoreSlider" type="button"><i class="la la-plus"></i></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -474,9 +526,7 @@
                                                 <input type="file" name="imageFile[]" class="myfrm form-control">
                                                 <input type="hidden" name="checkSelect[]">
                                                 <div class="input-group-btn">
-                                                    <button class="btn btn-danger removeSliderImage" type="button">
-                                                        <i class="la la-close"></i>
-                                                    </button>
+                                                    <button class="btn btn-danger removeSliderImage" type="button"><i class="la la-close"></i></button>
                                                 </div>
                                             </div>
                                         </div>
@@ -500,7 +550,6 @@
                                     <!--end::Form-->
                                     </div>
                                     <!--end::Card-->
-
                                 </div>
                             </div>
                             <!--end::Card-->
@@ -523,93 +572,104 @@
     <!--end::Main-->
 
 </div>
-    <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
-    <!--begin::Global Config(global config for global JS scripts)-->
-    <script>var KTAppSettings = {"breakpoints": {"sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400},
-            "colors": {
-                "theme": {
-                    "base": {
-                        "white": "#ffffff",
-                        "primary": "#3699FF",
-                        "secondary": "#E5EAEE",
-                        "success": "#1BC5BD",
-                        "info": "#8950FC",
-                        "warning": "#FFA800",
-                        "danger": "#F64E60",
-                        "light": "#E4E6EF",
-                        "dark": "#181C32"
-                    },
-                    "light": {
-                        "white": "#ffffff",
-                        "primary": "#E1F0FF",
-                        "secondary": "#EBEDF3",
-                        "success": "#C9F7F5",
-                        "info": "#EEE5FF",
-                        "warning": "#FFF4DE",
-                        "danger": "#FFE2E5",
-                        "light": "#F3F6F9",
-                        "dark": "#D6D6E0"
-                    },
-                    "inverse": {
-                        "white": "#ffffff",
-                        "primary": "#ffffff",
-                        "secondary": "#3F4254",
-                        "success": "#ffffff",
-                        "info": "#ffffff",
-                        "warning": "#ffffff",
-                        "danger": "#ffffff",
-                        "light": "#464E5F",
-                        "dark": "#ffffff"
-                    }
+<script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script>
+<!--begin::Global Config(global config for global JS scripts)-->
+<script>var KTAppSettings = {
+        "breakpoints": {"sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400},
+        "colors": {
+            "theme": {
+                "base": {
+                    "white": "#ffffff",
+                    "primary": "#3699FF",
+                    "secondary": "#E5EAEE",
+                    "success": "#1BC5BD",
+                    "info": "#8950FC",
+                    "warning": "#FFA800",
+                    "danger": "#F64E60",
+                    "light": "#E4E6EF",
+                    "dark": "#181C32"
                 },
-                "gray": {
-                    "gray-100": "#F3F6F9",
-                    "gray-200": "#EBEDF3",
-                    "gray-300": "#E4E6EF",
-                    "gray-400": "#D1D3E0",
-                    "gray-500": "#B5B5C3",
-                    "gray-600": "#7E8299",
-                    "gray-700": "#5E6278",
-                    "gray-800": "#3F4254",
-                    "gray-900": "#181C32"
+                "light": {
+                    "white": "#ffffff",
+                    "primary": "#E1F0FF",
+                    "secondary": "#EBEDF3",
+                    "success": "#C9F7F5",
+                    "info": "#EEE5FF",
+                    "warning": "#FFF4DE",
+                    "danger": "#FFE2E5",
+                    "light": "#F3F6F9",
+                    "dark": "#D6D6E0"
+                },
+                "inverse": {
+                    "white": "#ffffff",
+                    "primary": "#ffffff",
+                    "secondary": "#3F4254",
+                    "success": "#ffffff",
+                    "info": "#ffffff",
+                    "warning": "#ffffff",
+                    "danger": "#ffffff",
+                    "light": "#464E5F",
+                    "dark": "#ffffff"
                 }
             },
-            "font-family": "Poppins"
-        };</script>
-    <!--end::Global Config-->
-    <!--begin::Global Theme Bundle(used by all pages)-->
-    <script src="{{asset('assets/admin/plugins/global/plugins.bundle.js')}}"></script>
-    <script src="{{asset('assets/admin/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
-    <script src="{{asset('assets/admin/js/scripts.bundle.js')}}"></script>
-    <!--end::Global Theme Bundle-->
-    <!--begin::Page Scripts(used by this page)-->
-    <script src="{{asset('assets/admin/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
-    <script src="{{asset('assets/admin/js/pages/crud/forms/widgets/bootstrap-timepicker.js')}}"></script>
-    <script src="{{asset('assets/admin/js/pages/crud/file-upload/image-input.js')}}"></script>
+            "gray": {
+                "gray-100": "#F3F6F9",
+                "gray-200": "#EBEDF3",
+                "gray-300": "#E4E6EF",
+                "gray-400": "#D1D3E0",
+                "gray-500": "#B5B5C3",
+                "gray-600": "#7E8299",
+                "gray-700": "#5E6278",
+                "gray-800": "#3F4254",
+                "gray-900": "#181C32"
+            }
+        },
+        "font-family": "Poppins"
+    };</script>
+<!--end::Global Config-->
+<!--begin::Global Theme Bundle(used by all pages)-->
+<script src="{{asset('assets/admin/plugins/global/plugins.bundle.js')}}"></script>
+<script src="{{asset('assets/admin/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>
+<script src="{{asset('assets/admin/js/scripts.bundle.js')}}"></script>
+<!--end::Global Theme Bundle-->
+<!--begin::Page Scripts(used by this page)-->
+<script src="{{asset('assets/admin/js/pages/crud/forms/widgets/bootstrap-datepicker.js')}}"></script>
+<script src="{{asset('assets/admin/js/pages/crud/forms/widgets/bootstrap-timepicker.js')}}"></script>
+<script src="{{asset('assets/admin/js/pages/crud/file-upload/image-input.js')}}"></script>
 
-    <!--end::Page Scripts-->
+<!--end::Page Scripts-->
 
 
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $(".addMoreSlider").click(function () {
-                var cloneHTML = $(".clone").html();
-                $(".sliderList").after(cloneHTML);
-            });
-            $("body").on("click", ".removeSliderImage", function () {
-                $(this).parent().parent(".phpicoder").remove();
-            });
-
-            $(".addMoreColor").click(function () {
-                var cloneHTML = $(".cloneColor").html();
-                $(".colorList").after(cloneHTML);
-            });
-            $("body").on("click", ".removeSliderColor", function () {
-                $(this).parent().parent(".phpicoderColor").remove();
-            });
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".addMoreSlider").click(function () {
+            var cloneHTML = $(".clone").html();
+            $(".sliderList").after(cloneHTML);
         });
-    </script>
+
+        $("body").on("click", ".removeSliderImage", function () {
+            $(this).parent().parent(".phpicoder").remove();
+        });
+
+        $(".addMoreColor").click(function () {
+            var cloneHTML = $(".cloneColor").html();
+            $(".colorList").after(cloneHTML);
+        });
+        $("body").on("click", ".removeSliderColor", function () {
+            $(this).parent().parent(".phpicoderColor").remove();
+        });
+
+
+        $(".addMoreSize").click(function () {
+            var sizeHTML = $(".size").html();
+            $(".sizeList").after(sizeHTML);
+        });
+
+        $("body").on("click", ".removeSize", function () {
+            $(this).parent().parent(".phpsize").remove();
+        });
+    });
+</script>
 
 
 </body>

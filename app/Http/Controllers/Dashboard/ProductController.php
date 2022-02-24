@@ -9,6 +9,7 @@ use App\Models\Color;
 use App\Models\Image;
 use App\Models\OtherInfo;
 use App\Models\Product;
+use App\Models\ProductSize;
 use App\Models\Similar;
 use DB;
 use Illuminate\Http\Request;
@@ -54,6 +55,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = Validator::make(request()->all(), [
             'name' => 'required|string|max:300',
             'name_en' => 'required|string|max:300',
@@ -72,6 +74,7 @@ class ProductController extends Controller
             session()->flash('alert_error_msg', $data->errors()->first());
             return back();
         }
+
         //Add Product
         $product = Product::create([
             'name' => request()->name,
@@ -89,8 +92,28 @@ class ProductController extends Controller
             'refund_and_return_policy_en' => request()->refund_and_return_policy_en,
             'shipping_info' => request()->shipping_info,
             'shipping_info_en' => request()->shipping_info_en,
-            'size' => request()->size,
+           // 'size' => request()->size,
         ]);
+        if (request()->size) {
+            $productSize = [];
+            $sizes = request()->size;
+            for ($i = 0; $i < count(request()->size); $i++) {
+                if(!is_null( $sizes[$i])) {
+                    $productSize[] = [
+                        'product_id' => $product->id,
+                        'size_id' => $sizes[$i]
+                    ];
+                }
+            }
+            $price = request()->size_price;
+
+            for ($i = 0; $i < count(request()->size_price); $i++) {
+                if(!is_null( $price[$i])) {
+                    $productSize[$i]['price'] = $price[$i];
+                }
+            }
+            ProductSize::insert($productSize);
+        }
 
         //Store color
         $colors = request()->colors;
@@ -124,6 +147,7 @@ class ProductController extends Controller
                 ]);
             }
         }
+
 
 
         //Stote Images
@@ -173,7 +197,8 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::where('id', $id)->with('colors', 'images', 'category_product.category', 'similars.similar')->first();
+        $product = Product::where('id', $id)->with('colors', 'images', 'category_product.category', 'similars.similar','sizes')->first();
+
         $categories = Category::all();
         $products = Product::where('id', '!=', $id)->get();
 
@@ -239,14 +264,37 @@ class ProductController extends Controller
             'refund_and_return_policy_en' => request()->refund_and_return_policy_en,
             'shipping_info' => request()->shipping_info,
             'shipping_info_en' => request()->shipping_info_en,
-            'size' => request()->size,
+           // 'size' => request()->size,
             'price_after_discount' => request()->price_after_discount,
         ]);
+
+        if (request()->size) {
+            $productSize = [];
+            $sizes = request()->size;
+            for ($i = 0; $i < count(request()->size); $i++) {
+                if(!is_null( $sizes[$i])) {
+                    $productSize[] = [
+                        'product_id' => $product->id,
+                        'size_id' => $sizes[$i]
+                    ];
+                }
+            }
+            $price = request()->size_price;
+
+            for ($i = 0; $i < count(request()->size_price); $i++) {
+                if(!is_null( $price[$i])) {
+                    $productSize[$i]['price'] = $price[$i];
+                }
+            }
+            ProductSize::where('product_id',$product->id)->delete();
+            ProductSize::insert($productSize);
+        }
+
 
         //Store color
         $colors = request()->colors;
         //dd($colors);
-        if (count($colors) > 2) {
+        if (isset($colors) && count($colors) > 2) {
             for ($i = 0; $i < (count($colors) - 1); $i++) {
                 Color::create([
                     'product_id' => $product->id,

@@ -23,18 +23,14 @@ class Product extends Model
     ];
     protected $appends = ['show_name', 'show_description', 'show_size'];
 
-    public static function sizes()
+    public static function getSizes()
     {
-        return [
-            1 => trans('site.small'),
-            2 => trans('site.medium'),
-            3 => trans('site.larage'),
-        ];
+        return Size::all();
     }
 
     public function getShowSizeAttribute()
     {
-        $arr =  [
+        $arr = [
             1 => trans('site.small'),
             2 => trans('site.medium'),
             3 => trans('site.larage'),
@@ -88,6 +84,11 @@ class Product extends Model
     public function details_order()
     {
         return $this->hasMany(DetailsOrder::class);
+    }
+
+    public function sizes()
+    {
+        return $this->hasMany(ProductSize::class);
     }
 
 }

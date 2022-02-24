@@ -172,16 +172,7 @@
 
 
 											<div class="form-group row">
-												<div class="col-lg-6">
-													<label>
-														  {{  __('langs.price') }}:
-													</label>
-													<input id="title" type="text" class="form-control" required  placeholder=" {{  __('langs.price') }}" name="price"   value="{{$product->price}}" />
-
-
-												</div>
-
-												<div class="col-lg-6">
+												<div class="col-lg-12">
 													<label>
 														{{  __('langs.sku') }} :
 													</label>
@@ -190,6 +181,27 @@
 												</div>
 
 											</div>
+
+                                                <div class="form-group row">
+                                                    <div class="col-lg-6">
+                                                        <label>
+                                                            {{  __('langs.price') }} :
+                                                        </label>
+                                                        <input id="price" type="text" name="price"
+                                                               class="form-control"
+                                                               placeholder=" {{  __('langs.price') }}"
+                                                               value="{{ $product->price }}"/>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label>
+                                                            {{  __('langs.price_after_discount') }} :
+                                                        </label>
+                                                        <input id="title" type="text" name="price_after_discount"
+                                                               class="form-control"
+                                                               placeholder=" {{  __('langs.price_after_discount') }}"
+                                                               value="{{ $product->price_after_discount }}"/>
+                                                    </div>
+                                                </div>
 
 											<div class="form-group row">
 												<div class="col-lg-6">
@@ -259,48 +271,48 @@
                                                 </div>
 
 
-											 	@foreach($product->colors as $color)
-                                                    <span class="rem_color" id="{{$color->id}}">
+{{--											 	@foreach($product->colors as $color)--}}
+{{--                                                    <span class="rem_color" id="{{$color->id}}">--}}
 
-													<input type="color"  value="{{$color->color}}" class="myfrm form-control" style="width:300px">
+{{--													<input type="color"  value="{{$color->color}}" class="myfrm form-control" style="width:300px">--}}
 
-                                                         <input type="hidden" class="id_color" value="{{$color->id}}"/>
+{{--                                                         <input type="hidden" class="id_color" value="{{$color->id}}"/>--}}
 
-                                                         <button  class="btn btn-danger btn-xs btn-shadow font-weight-bold mr-2 removeColor" type="button">
-                                                             <i class="la la-close"></i>
-                                                         </button>
+{{--                                                         <button  class="btn btn-danger btn-xs btn-shadow font-weight-bold mr-2 removeColor" type="button">--}}
+{{--                                                             <i class="la la-close"></i>--}}
+{{--                                                         </button>--}}
 
-                                                    </span>
-                                                @endforeach
-
-
-                                                    <br/>
-                                                    <br/>
-                                                    <br/>
-
-												<input type="hidden" name="del_colors" class="del_color"/>
+{{--                                                    </span>--}}
+{{--                                                @endforeach--}}
 
 
-												<div class="colorList" style="width:300px">
-													  <div class="input-group control-group" >
-														<input type="color" name="colors[]" required class="myfrm form-control">
-														<div class="input-group-btn">
-														  <button class="btn btn-success addMoreColor" type="button">
-															 <i class="la la-plus"></i>
-														  </button>
-														</div>
-													  </div>
-													</div>
-													<div class="cloneColor d-none">
-													  <div class="control-group input-group phpicoderColor" style="margin-top:5px;width:300px">
-														<input type="color" name="colors[]" class="myfrm form-control">
-														<div class="input-group-btn">
-														  <button class="btn btn-danger removeSliderColor" type="button">
-															   <i class="la la-close"></i>
-														  </button>
-														</div>
-													  </div>
-												</div>
+{{--                                                    <br/>--}}
+{{--                                                    <br/>--}}
+{{--                                                    <br/>--}}
+
+{{--												<input type="hidden" name="del_colors" class="del_color"/>--}}
+
+
+{{--												<div class="colorList" style="width:300px">--}}
+{{--													  <div class="input-group control-group" >--}}
+{{--														<input type="color" name="colors[]" required class="myfrm form-control">--}}
+{{--														<div class="input-group-btn">--}}
+{{--														  <button class="btn btn-success addMoreColor" type="button">--}}
+{{--															 <i class="la la-plus"></i>--}}
+{{--														  </button>--}}
+{{--														</div>--}}
+{{--													  </div>--}}
+{{--													</div>--}}
+{{--													<div class="cloneColor d-none">--}}
+{{--													  <div class="control-group input-group phpicoderColor" style="margin-top:5px;width:300px">--}}
+{{--														<input type="color" name="colors[]" class="myfrm form-control">--}}
+{{--														<div class="input-group-btn">--}}
+{{--														  <button class="btn btn-danger removeSliderColor" type="button">--}}
+{{--															   <i class="la la-close"></i>--}}
+{{--														  </button>--}}
+{{--														</div>--}}
+{{--													  </div>--}}
+{{--												</div>--}}
 
 
 
@@ -340,10 +352,135 @@
 												</div>
 											</div>
 
+                                                <div class="form-group row">
+                                                    <div class="col-lg-6">
+                                                        <label>
+                                                            {{  __('langs.product_info') }}
+                                                            @if(app()->isLocale('ar'))
+                                                                (عربي)
+                                                            @endif
+
+                                                            @if(app()->isLocale('en'))
+                                                                (ar)
+                                                            @endif
+                                                            : </label>
+
+                                                        <textarea class="form-control" name="product_info" rows="4">{{$product->product_info}}</textarea>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label>
+                                                            {{  __('langs.product_info') }}
+                                                            @if(app()->isLocale('ar'))
+                                                                (إنكليزي)
+                                                            @endif
+
+                                                            @if(app()->isLocale('en'))
+                                                                (en)
+                                                            @endif
+                                                            : </label>
+
+                                                        <textarea class="form-control" name="product_info_en" rows="4">{{$product->product_info_en}}</textarea>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <div class="col-lg-6">
+                                                        <label>
+                                                            {{  __('langs.shipping_info') }}
+                                                            @if(app()->isLocale('ar'))
+                                                                (عربي)
+                                                            @endif
+
+                                                            @if(app()->isLocale('en'))
+                                                                (ar)
+                                                            @endif
+                                                            : </label>
+
+                                                        <textarea class="form-control" name="product_info" rows="4">{{$product->product_info}}</textarea>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label>
+                                                            {{  __('langs.shipping_info') }}
+                                                            @if(app()->isLocale('ar'))
+                                                                (إنكليزي)
+                                                            @endif
+
+                                                            @if(app()->isLocale('en'))
+                                                                (en)
+                                                            @endif
+                                                            : </label>
+
+                                                        <textarea class="form-control" name="shipping_info_en" rows="4">{{$product->shipping_info_en}}</textarea>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <div class="col-lg-6">
+                                                        <label>
+                                                            {{  __('langs.refund_and_return_policy') }}
+                                                            @if(app()->isLocale('ar'))
+                                                                (عربي)
+                                                            @endif
+
+                                                            @if(app()->isLocale('en'))
+                                                                (ar)
+                                                            @endif
+                                                            : </label>
+
+                                                        <textarea class="form-control" name="refund_and_return_policy"
+                                                                  rows="4">{{$product->refund_and_return_policy }}</textarea>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <label>
+                                                            {{  __('langs.refund_and_return_policy') }}
+                                                            @if(app()->isLocale('ar'))
+                                                                (إنكليزي)
+                                                            @endif
+
+                                                            @if(app()->isLocale('en'))
+                                                                (en)
+                                                            @endif
+                                                            : </label>
+
+                                                        <textarea class="form-control" name="refund_and_return_policy_en"
+                                                                  rows="4">{{$product->refund_and_return_policy_en }}</textarea>
+                                                    </div>
+                                                </div>
+                                                @foreach($product->sizes as $size)
+                                                    <div class="form-group row sizeList phpsize">
+                                                        <div class="col-lg-6">
+                                                            <label>size : </label>
+                                                            <select name="size[]" class="form-control">
+                                                                <option value="">select size</option>
+                                                                @foreach(\App\Models\Product::getSizes() as $key=>$value)
+                                                                    <option value="{{$value->id}}" {{ $size->size_id == $value->id ? 'selected' : ''}}>{{$value->name}}</option>
+                                                                @endforeach
+                                                            </select>
+                                                        </div>
+
+                                                        <div class="col-lg-5">
+                                                            <label>
+                                                                {{  __('langs.price') }}:
+                                                            </label>
+                                                            <input  type="text" class="form-control" placeholder=" {{  __('langs.price') }}" name="size_price[]" value="{{ $size->price }}"/>
+                                                        </div>
+                                                        <div class="col-lg-1">
+                                                            <label></label>
+                                                            <div class="input-group-btn removeSize">
+                                                                <button class="btn btn-danger" type="button"><i class="la la-remove"></i></button>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                @endforeach
 
 
 
-													@foreach($product->images as $image)
+
+                                            @foreach($product->images as $image)
                                                     <span class="rem_img" id="{{$image->id}}">
 
                                                          <img src="{{url('/image/product/'.$image->img)}}" style="width:10%;height:10%" class=" align-self-end" alt="" />
@@ -526,7 +663,19 @@
 		  $("body").on("click",".removeSliderColor",function(){
 			  $(this).parent().parent(".phpicoderColor").remove();
 		  });
+
+
+
+            $(".addMoreSize").click(function () {
+                var sizeHTML = $(".size").html();
+                $(".sizeList").after(sizeHTML);
+            });
+
+            $("body").on("click", ".removeSize", function () {
+                $(this).parent().parent(".phpsize").remove();
+            });
 		});
+
 	</script>
 
 

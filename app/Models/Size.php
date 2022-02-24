@@ -9,7 +9,7 @@ class Size extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_id','name'];
+    protected $fillable = ['name','name_en'];
 
     public function product()
     {

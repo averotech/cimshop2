@@ -10,7 +10,9 @@
                 <div class="col-lg-3 col-md-4   col-sm-6 col-xs-12 m-p-0 m-0">
 
                     <div class="boxProduct">
+                        @if($product->mainImage)
                         <div class="img"><img src="{{$product->mainImage->img_url}}" alt=""></div>
+                        @endif
                         <a href="{{ route('site.product.details',['id' => $product->id]) }}" >
                             <div class="prName">{{ $product->name }}</div>
                         </a>
