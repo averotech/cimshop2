@@ -77,6 +77,17 @@
             </div>
         </div>
     </nav>
+    <div class="mobileCartLang   d-lg-none d-md-block d-sm-block d-xs-block">
+        <select class="form-select lang-select" aria-label="Default select example">
+            <option value="0" selected>English</option>
+            <option value="1">עִברִית</option>
+
+        </select>
+        <a href="{{ route('site.cart.index') }}" class="CartIco "> <i class="fal fa-shopping-bag"></i>
+            <span class="badge badge-pill badge-danger">5</span>
+        </a>
+
+    </div>
 </div>
 
 
