@@ -10,7 +10,11 @@
 <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
 <script src="{{ asset('assets/js/owl.carousel.js') }}"></script>
 <script src="{{ asset('assets/js/fontawesome.min.js') }}"></script>
-<script src="{{ asset('assets/js/mainScript.js') }}"></script>
+@if(app()->getLocale() === 'iw')
+    <script src="{{ asset('assets/js/mainScript-rtl.js') }}"></script>
+@else
+    <script src="{{ asset('assets/js/mainScript.js') }}"></script>
+@endif
 <script src="{{ asset('assets/js/sliderRange.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.popup.lightbox.js') }}"></script>
 @stack('_js')

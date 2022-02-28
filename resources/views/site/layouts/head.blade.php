@@ -12,7 +12,11 @@
     <link href="{{ asset('assets/css/owl.carousel.css') }}" rel="stylesheet" >
     <link href="{{ asset('assets/css/owl.theme.default.css') }}" rel="stylesheet" >
     <link href="{{ asset('assets/css/popup-lightbox.css') }}" rel="stylesheet" >
-    <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" >
+    @if(app()->getLocale() === 'iw')
+        <link href="{{ asset('assets/css/style-rtl.css') }}" rel="stylesheet" >
+    @else
+        <link href="{{ asset('assets/css/main.css') }}" rel="stylesheet" >
+    @endif
     <style>
         .error {
             color:red;
