@@ -64,24 +64,19 @@ $(".img-container").popupLightbox({
 
 
 
-  // $(".showCart").click(function () {
-  //
-  // $(".overlay").show();
-  // $(".cartProducts").addClass("slideCartProducts");
-  //
-  // });
+  $(".showCart").click(function () {
+
+  $(".overlay").show();
+  $(".cartProducts").addClass("slideCartProducts");
+
+  });
 
 
   $(".closeCart").click(function () {
 
     $(".overlay").hide();
     $(".cartProducts").removeClass("slideCartProducts");
-
-
     });
-
-
-
 
 
 
