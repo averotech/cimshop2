@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 use Carbon\Carbon;
-use Crypt;
 
 class UserSeeder extends Seeder
 {
@@ -26,6 +25,6 @@ class UserSeeder extends Seeder
         'password' => Hash::make('root1111'),
         'is_admin'=> 1,
         'created_at' => Carbon::now()
-     ]); 
+     ]);
     }
 }

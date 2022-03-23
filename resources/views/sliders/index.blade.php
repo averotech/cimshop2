@@ -169,9 +169,40 @@
                                                 <a href="javascript:;" class="btn btn-sm btn-clean btn-icon" title="{{  __('langs.delete') }}" data-toggle="modal" data-target="#exampleModalCenter{{$slider->id}}">
                                                     <i class="la la-trash"></i>
                                                 </a>
-
-
                                             </td>
+
+                                            <div class="modal fade" id="exampleModalCenter{{$slider->id}}" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdrop" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">  {{  __('langs.confirm_title') }}</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <i aria-hidden="true" class="ki ki-close"></i>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+
+
+                                                            {{  __('langs.confirm_msg') }}  {{$slider->id}} ؟
+
+                                                        </div>
+                                                        <div class="modal-footer">
+
+                                                            {!! Form::open(['url' => route('admin.slider.delete',['id'=>$slider->id]) , 'files' => true,'method'=>'delete']) !!}
+
+                                                            {!! Form::submit( __('langs.yes') , ['class'=>' submit btn btn-primary font-weight-bold',
+
+                                                                                   ]) !!}
+
+
+                                                            {!! Form::close() !!}
+
+                                                            <button type="button" class="btn btn-light-primary font-weight-bold" data-dismiss="modal">{{__('langs.no')}}</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                         </tr>
                                     @endforeach
                                     </tbody>

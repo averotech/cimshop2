@@ -11,6 +11,8 @@
     @yield('content')
 
     <div class="overlay"></div>
+    <cart-component :route-cart="'{{ route('site.cart.index') }}'"></cart-component>
+
     @include('site.layouts.footer')
 </div>
 

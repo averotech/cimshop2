@@ -41,7 +41,6 @@ Vue.component('product-detilas', {
             ++this.qty;
         },
         addToCart() {
-            console.log(this.product.price * this.qty)
             this.cart.push({
                 img: this.product.images[0].img_url,
                 productName: this.product.show_name,
@@ -60,6 +59,11 @@ Vue.component('product-detilas', {
             for (let i = 0; i < this.cart.length; i++) {
                 this.subtotal = this.subtotal + parseInt(this.cart[i].price) * parseInt(this.cart[i].qty);
             }
+            this.$store.dispatch('getCart')
+
+            this.openCart();
+        },
+        openCart() {
             $(".overlay").show();
             $(".cartProducts").addClass("slideCartProducts");
         },

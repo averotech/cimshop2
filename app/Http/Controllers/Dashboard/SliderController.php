@@ -122,4 +122,11 @@ class SliderController extends Controller
         return \Redirect::to(route('admin.slider.index'));
     }
 
+    public function destroy($id)
+    {
+        $slider= Slider::where('id', $id)->first();
+        $slider->delete();
+        session()->flash('alert_success_msg', 'تم الحذف بنجاح');
+        return back();
+    }
 }

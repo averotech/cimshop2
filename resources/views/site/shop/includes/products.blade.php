@@ -3,7 +3,7 @@
         <div v-for="product in products" class="col-lg-4 col-md-6   col-sm-12 col-xs-12 m-p-0 m-0">
             <a :href="`{{route('site.product.index')}}/details/${product.id}`" style="text-decoration: none;">
                 <div class="boxProduct">
-                    <div class="img" v-if="product.main_image">
+                    <div class="img" v-if="product&&product.main_image">
                         <img :src="product.main_image.img_url" alt="">
                     </div>
                     <div class="prName">@{{ product.show_name }}</div>
