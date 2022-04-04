@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'reset' => 'Your password has been reset!',
-    'sent' => 'We have emailed your password reset link!',
-    'throttled' => 'Please wait before retrying.',
-    'token' => 'This password reset token is invalid.',
-    'user' => "We can't find a user with that email address.",
+    'reset' => 'הסיסמה שלך אופסה!',
+    'sent' => 'שלחנו באימייל קישור לאיפוס הסיסמה שלך!',
+    'throttled' => 'אנא המתן לפני שתנסה שוב.',
+    'token' => 'אסימון איפוס הסיסמה אינו חוקי.',
+    'user' => "אנחנו לא יכולים למצוא משתמש עם כתובת האימייל הזו.",
 
 ];
